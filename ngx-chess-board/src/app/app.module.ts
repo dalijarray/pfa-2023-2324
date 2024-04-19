@@ -33,7 +33,8 @@ import { NgxChessBoardModule } from 'ngx-chess-board';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module'; 
 import { RouterModule } from '@angular/router'; // Import RouterModule
-
+import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { AppComponent } from './app.component';
 import { ActionsComponent } from './components/actions/actions.component';
 import { FenComponent } from './components/fen/fen.component';
@@ -41,6 +42,7 @@ import { MovesComponent } from './components/moves/moves.component';
 import { SettingsComponent } from './components/settings/settings.component';
 // import { PlaywithfriendsComponent } from './playwithfriends/playwithfriends.component'; 
 import { HeaderComponent } from './header/header.component';
+import { PuzzlesComponent } from './puzzles/puzzles.component';
 
 @NgModule({
     declarations: [AppComponent, ActionsComponent, SettingsComponent, MovesComponent, FenComponent],    
@@ -51,8 +53,12 @@ import { HeaderComponent } from './header/header.component';
         HttpClientModule,
         AppRoutingModule,
         HeaderComponent,
-        RouterModule.forRoot([]) // Add RouterModule.forRoot([])
+        RouterModule.forRoot([]), // Add RouterModule.forRoot([])
+        PuzzlesComponent,
+        NgIf,
+        CommonModule
     ],
+    exports: [PuzzlesComponent],
     providers: [],
     bootstrap: [AppComponent],
 })

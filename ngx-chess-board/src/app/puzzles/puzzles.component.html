@@ -1,21 +1,76 @@
 <div class="row pt-5">
+    <div class="col-6">
+            <ngx-chess-board
+            #board
+            [size]="size"
+            [lightTileColor]="lightTileColor"
+            (moveChange)="moveCallback($event)"
+            [dragDisabled]="dragDisabled"
+            [drawDisabled]="drawDisabled"
+            [darkTileColor]="darkTileColor"
+            [lightDisabled]="lightDisabled"
+            [darkDisabled]="darkDisabled"
+            [freeMode]="freeMode"
+        >
+        
+        
+        </ngx-chess-board>
+    </div>
 
-    <ngx-chess-board
-    #board
-    [size]="size"
-    [lightTileColor]="lightTileColor"
-    (moveChange)="moveCallback($event)"
-    [dragDisabled]="dragDisabled"
-    [drawDisabled]="drawDisabled"
-    [darkTileColor]="darkTileColor"
-    [lightDisabled]="lightDisabled"
-    [darkDisabled]="darkDisabled"
-    [freeMode]="freeMode"
->
+
+    
+    <div class="col-6">
 
 
-</ngx-chess-board>
-<button type="button" class="btn btn-success"
-style="margin-left:auto; margin-right: 10px" (click)="setFen()">Set FEN
-</button>
+      
+        <div class="row g-2">
+            <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="floatingInputGrid" value="1500">
+                  <label for="floatingInputGrid">Rating</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="floatingInputGrid" value="50">
+                  <label for="floatingInputGrid">Popularity</label>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInputGrid" value="Arabian mate">
+                  <label for="floatingInputGrid">Theme</label>
+                </div>
+            </div>
+
+        </div>
+     
+
+
+        <button type="button" class="btn btn-success mt-5"
+    style="margin-left:auto; margin-right: 10px" (click)="getPuzzlesByFilter()">Set FEN
+    </button>
+    <button type="button" class="btn btn-success mt-5"
+    style="margin-left:auto; margin-right: 10px" (click)="nextPuzzles()">Next Puzzles
+    </button>
+    <button type="button" class="btn btn-success mt-5"
+    style="margin-left:auto; margin-right: 10px" (click)="move()">get
+    </button>
+    <!-- <div *ngFor="let item of this.datapuzz[this.index].Moves.split(' ')">
+      <div class="alert alert-danger mt-5" role="alert" *ngIf="falseMove ">
+        {{item}} is incorrect !
+      </div>
+    </div> -->
+    <div id="messageContainer"></div>
+    <div id="falseMove" *ngIf="bool">
+      <button type="button" class="btn btn-danger mt-5"
+      style="margin-left:auto; margin-right: 10px" >reload
+      </button>
+    </div>
+  
+ 
+</div>
+    
+
 </div>
