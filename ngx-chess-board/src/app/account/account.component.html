@@ -1,0 +1,58 @@
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-6">
+            <img src="../../assets/chesss.png" style="max-width: 600px; max-height: 600px;" />            
+        </div>
+        <div class="col-6">
+            <div class="card" style="width: 40rem; background-color: #484136">
+                <div class="mx-auto p-2">
+                    <!-- Bind the click event to trigger the file input -->
+                    <img [src]="selectedImage ? selectedImage : '../../assets/user.png'" class="card-img-top"
+                        style="max-width: 500px; max-height: 300px; cursor: pointer;" alt="..." (click)="fileInput.click()" />
+                    <!-- Hidden file input to trigger image selection -->
+                    <input type="file" #fileInput style="display: none;" (change)="onImageSelected($event)" accept="image/*">
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title text-center" style="color: #f0d9b5">Be our vanguard, lighting the path for others to follow</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li
+                        class="list-group-item"
+                        style="background-color: #484136; color: #f0d9b5"
+                        (click)="navigateTo('/playwithbot')"
+                    >
+                        <img src="../../../assets/pc.png" alt="" class="logo" /> Play with Computer
+                    </li>
+                    <li
+                        class="list-group-item"
+                        style="background-color: #484136; color: #f0d9b5"
+                        (click)="navigateTo('/playwithfriends')"
+                    >
+                        <img src="../../../assets/gaming.png" alt="" class="logo" /> Play with Friends
+                    </li>
+                    <li
+                        class="list-group-item"
+                        style="background-color: #484136; color: #f0d9b5"
+                        (click)="navigateTo('/puzzles')"
+                    >
+                        <img src="../../../assets/problem-solving.png" alt="" class="logo" /> Solve Puzzles
+                    </li>
+                    <li
+                        class="list-group-item"
+                        style="background-color: #484136; color: #f0d9b5"
+                        (click)="logout()"
+                    >
+                        <img src="../../../assets/exit.png" alt="" class="logo" /> Logout
+                    </li>
+                    <li
+                        class="list-group-item"
+                        style="background-color: #484136; color: #f0d9b5"
+                    >
+                        <img src="path/to/score_icon.png" alt="" class="logo" /> User Score: {{ user.score }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
