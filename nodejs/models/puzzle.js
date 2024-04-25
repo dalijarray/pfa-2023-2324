@@ -68,7 +68,7 @@ async function getPuzzlesByFilter(popularity, rating) {
     const initialResults = await Puzzle.find(
       { Rating: rating }
     );
-    console.log(initialResults)
+      
 
     // Filtrer les résultats initiaux par thème et popularité
     const filteredResults = initialResults.filter(puzzle =>
