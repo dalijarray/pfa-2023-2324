@@ -33,6 +33,10 @@ import { NgxChessBoardModule } from 'ngx-chess-board';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module'; 
 import { RouterModule } from '@angular/router'; // Import RouterModule
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 import { AppComponent } from './app.component';
 import { ActionsComponent } from './components/actions/actions.component';
 import { FenComponent } from './components/fen/fen.component';
@@ -40,19 +44,30 @@ import { MovesComponent } from './components/moves/moves.component';
 import { SettingsComponent } from './components/settings/settings.component';
 // import { PlaywithfriendsComponent } from './playwithfriends/playwithfriends.component'; 
 import { HeaderComponent } from './header/header.component';
+<<<<<<< HEAD
 import { SignUpComponent } from './sign-up/sign-up.component';
 @NgModule({
     declarations: [AppComponent, ActionsComponent,    SignUpComponent , SettingsComponent, MovesComponent,SignUpComponent, FenComponent],    
     imports: [
         NgxChessBoardModule, //
+=======
+
+@NgModule({
+    declarations: [AppComponent, ActionsComponent, SettingsComponent, MovesComponent, FenComponent],    
+    imports: [
+>>>>>>> origin/master
         BrowserModule,
         FormsModule,
         NgxChessBoardModule,
         HttpClientModule,
         AppRoutingModule,
         HeaderComponent,
+<<<<<<< HEAD
         FormsModule,
         RouterModule.forRoot([ { path: 'sign-up', component: SignUpComponent }]) // Add RouterModule.forRoot([])
+=======
+        RouterModule.forRoot([]) // Add RouterModule.forRoot([])
+>>>>>>> origin/master
     ],
     providers: [],
     bootstrap: [AppComponent],

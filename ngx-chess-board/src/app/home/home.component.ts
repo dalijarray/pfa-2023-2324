@@ -84,9 +84,14 @@
           whiteRookUrl: ''
       };
 
+<<<<<<< HEAD
       public darkTileColor = '#484136'; // Dark brown color
       public lightTileColor = '#f0d9b5'; // Light brown color
     
+=======
+      public darkTileColor = '#769557';
+      public lightTileColor = '#ebedd1';
+>>>>>>> origin/master
       public size = 600;
       public dragDisabled = false;
       public drawDisabled = false;
@@ -120,11 +125,14 @@
           this.fen = this.boardManager.getFEN();
           this.freeMode = false;
       }
+<<<<<<< HEAD
       //navigation to login
       navigateToLogin(): void {
         this.router.navigateByUrl('/login');
       }
       
+=======
+>>>>>>> origin/master
 
       public reverse(): void {
           this.boardManager.reverse();

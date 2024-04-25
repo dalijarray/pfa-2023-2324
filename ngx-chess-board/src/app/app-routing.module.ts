@@ -6,6 +6,7 @@
   import { PlaywithbotComponent } from './playwithbot/playwithbot.component';
   import { HomeComponent } from './home/home.component';
 import { PuzzlesComponent } from './puzzles/puzzles.component';
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -37,6 +38,22 @@ import { AdminAuthGuard } from './admin-auth.guard';
     ],
     imports: [
       FormsModule,
+=======
+  
+  const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect to home page on root path
+    { path: 'home', component: HomeComponent }, // Define the path as 'home', without a leading slash
+  
+    { path: 'playwithfriends', component: PlaywithfriendsComponent }, // Define other paths similarly
+    { path: 'playwithbot', component: PlaywithbotComponent },
+    { path: 'puzzles', component: PuzzlesComponent}
+  ];
+  
+
+  @NgModule({
+    declarations: [],
+    imports: [
+>>>>>>> origin/master
       RouterModule.forRoot(routes)
     ],
     exports: [RouterModule]

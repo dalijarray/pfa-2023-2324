@@ -62,8 +62,13 @@
             whiteRookUrl: ''
         };
 
+<<<<<<< HEAD
         public darkTileColor = '#484136'; // Dark brown color
       public lightTileColor = '#f0d9b5'; // Light brown color
+=======
+        public darkTileColor = '#769557';
+        public lightTileColor = '#ebedd1';
+>>>>>>> origin/master
         public size = 400;
         public dragDisabled = false;
         public drawDisabled = false;
@@ -203,6 +208,7 @@
         getPGN() {
             alert(this.boardManager.getPGN());
         }
+<<<<<<< HEAD
         // Clock
 player1Time: number = 600; // Initial time in seconds
 player2Time: number = 600;
@@ -244,4 +250,6 @@ timerFormat(timeInSeconds: number): string {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
+=======
+>>>>>>> origin/master
     }

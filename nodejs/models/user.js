@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+<<<<<<< HEAD
 const UserSchema = new mongoose.Schema({
     name: {
         type: String
@@ -29,3 +30,25 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
+=======
+const User = new mongoose.model('User',{
+
+name: {
+    type: String
+},
+lastname:{
+    type:String
+},
+age:{
+    type:Number
+},
+email:{
+    type:String
+},
+password:{
+    type:String
+}
+})
+module.exports= User;
+
+>>>>>>> origin/master
