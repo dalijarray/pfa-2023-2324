@@ -4,9 +4,9 @@ const http = require('http');
 const socketIO = require('socket.io');
 const mongoose = require('./config/connect.js');
 const chessGameRouter = require('./routes/ChessGame');
-
+const User = require('./routes/user.js')
 const puzzleRoutes = require('./routes/puzzle');
-
+const imageRoutes = require('./routes/imageRoutes.js'); // Import imageRoutes.js
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -20,7 +20,8 @@ io.on('connection', function(socket) {
         socket.broadcast.emit('move',moveData);
     });
 });
-
+app.use('/api/images', imageRoutes);
+app.use('/api',User);
 app.use('/api', chessGameRouter);
 app.use('/api/puzzles', puzzleRoutes);
 const PORT = 3000;

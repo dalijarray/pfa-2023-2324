@@ -62,8 +62,8 @@
             whiteRookUrl: ''
         };
 
-        public darkTileColor = '#769557';
-        public lightTileColor = '#ebedd1';
+        public darkTileColor = '#484136'; // Dark brown color
+      public lightTileColor = '#f0d9b5'; // Light brown color
         public size = 400;
         public dragDisabled = false;
         public drawDisabled = false;
@@ -203,4 +203,45 @@
         getPGN() {
             alert(this.boardManager.getPGN());
         }
+        // Clock
+player1Time: number = 600; // Initial time in seconds
+player2Time: number = 600;
+timerInterval: any;
+
+startTimer(player: number) {
+    this.timerInterval = setInterval(() => {
+        if (player === 1) {
+            this.player1Time--;
+            if (this.player1Time <= 0) {
+                clearInterval(this.timerInterval);
+                // Handle player 1 timeout
+            }
+        } else {
+            this.player2Time--;
+            if (this.player2Time <= 0) {
+                clearInterval(this.timerInterval);
+                // Handle player 2 timeout
+            }
+        }
+    }, 1000); // Update every second
+}
+
+stopTimer(player: number) {
+    clearInterval(this.timerInterval);
+}
+
+resetTimer(player: number) {
+    if (player === 1) {
+        this.player1Time = 600; // Reset player 1 time
+    } else {
+        this.player2Time = 600; // Reset player 2 time
+    }
+}
+
+timerFormat(timeInSeconds: number): string {
+    const minutes: number = Math.floor(timeInSeconds / 60);
+    const seconds: number = timeInSeconds % 60;
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
     }

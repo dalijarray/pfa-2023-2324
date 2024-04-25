@@ -209,9 +209,14 @@
     //     alert(this.boardManager.getPGN());
     // }
     import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { AppModule } from './app.module';
+import { HeaderComponent } from './header/header.component';
 
     @Component({
         selector: 'app-root',
+        // standalone: true,
+        // imports :[HeaderComponent,AppModule],
         templateUrl: './app.component.html',
         styleUrls: ['./app.component.scss'],
     })

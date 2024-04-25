@@ -1,10 +1,19 @@
-<div class="container">
-    <h1>lets play</h1>
-</div><div>    <ngx-chess-board #board [size]="size" [lightTileColor]="lightTileColor" (moveChange)="moveCallback($event)"
-    [dragDisabled]="dragDisabled"
-    [drawDisabled]="drawDisabled"
-    [darkTileColor]="darkTileColor"
-    [lightDisabled]="lightDisabled"
-    [darkDisabled]="darkDisabled"
-    [freeMode]="freeMode"
-></ngx-chess-board> </div>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-6">
+            <ngx-chess-board
+                #board
+                size="800px" 
+                [lightTileColor]="lightTileColor"
+                (moveChange)="moveCallback($event)"
+                [dragDisabled]="dragDisabled"
+                [drawDisabled]="drawDisabled"
+                [darkTileColor]="darkTileColor"
+                [lightDisabled]="lightDisabled"
+                [darkDisabled]="darkDisabled"
+                [freeMode]="freeMode"
+            >
+            </ngx-chess-board>
+        </div>
+    </div>
+</div>

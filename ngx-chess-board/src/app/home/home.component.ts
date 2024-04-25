@@ -84,8 +84,10 @@
           whiteRookUrl: ''
       };
 
-      public darkTileColor = '#769557';
-      public lightTileColor = '#ebedd1';
+      public darkTileColor = '#484136'; // Dark brown color
+      public lightTileColor = '#f0d9b5'; // Light brown color
+    
+
       public size = 600;
       public dragDisabled = false;
       public drawDisabled = false;
@@ -119,6 +121,11 @@
           this.fen = this.boardManager.getFEN();
           this.freeMode = false;
       }
+      //navigation to login
+      navigateToLogin(): void {
+        this.router.navigateByUrl('/login');
+      }
+      
 
       public reverse(): void {
           this.boardManager.reverse();
